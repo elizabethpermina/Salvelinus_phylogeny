@@ -3,8 +3,8 @@ Study of Salvelinus phylogeny with RAD-seq
 
 ## Project users
 
-1 Vsevolod Makeev
-1 Artem Kasianov
+1. Vsevolod Makeev
+1. Artem Kasianov
 1 Anastasia
 1 Michael Miller
 1 Alex Osinov
