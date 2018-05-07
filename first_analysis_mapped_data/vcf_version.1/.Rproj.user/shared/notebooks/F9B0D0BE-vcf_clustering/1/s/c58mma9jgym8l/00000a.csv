@@ -1,3 +1,0 @@
-"0","fit_genotype<-hclust(gower_dist_genotype_non_zero, method = ""ward.D"")"
-"0","par(cex=0.4, mar=c(5, 8, 4, 1))"
-"0","plot(fit_genotype_non_zero, xlab="""", ylab="""", main="""", sub="""", axes=FALSE)"

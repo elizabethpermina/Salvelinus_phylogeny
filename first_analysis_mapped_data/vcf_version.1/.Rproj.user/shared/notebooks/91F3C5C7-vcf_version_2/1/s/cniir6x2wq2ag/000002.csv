@@ -1,7 +1,0 @@
-"0","df1<-genotype"
-"0","pattern0<-""0/0"""
-"0","df1 %>%"
-"0","   mutate_all(., replace(., grep(pattern0, fixed=TRUE), 0)) %>% head()"
-"2","Error in grep(pattern0, fixed = TRUE) : 
-  argument ""x"" is missing, with no default
-"
