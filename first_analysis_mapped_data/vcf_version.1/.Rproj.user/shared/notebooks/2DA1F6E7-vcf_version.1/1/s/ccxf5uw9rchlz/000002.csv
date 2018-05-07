@@ -1,0 +1,2 @@
+"0","snp_forsequence_raw_file<-read.delim(file=""populations.snps.vcf.txt"", header = TRUE, sep = ""\t"", skip = header_rows_number)"
+"0","snp_raw_file<-read.delim(file=""populations.snps.vcf"", header = TRUE, sep = ""\t"", )"

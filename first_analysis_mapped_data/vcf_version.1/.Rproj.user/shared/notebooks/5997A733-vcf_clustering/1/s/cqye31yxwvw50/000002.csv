@@ -1,0 +1,3 @@
+"0","write.table(tsne_data_genotype, file=""genotype_clusters.csv"", quote = FALSE, sep = "","")"
+"0","write.table(g8_ward_coverage, file=""coverage_groups.csv"", quote = FALSE, sep = "","")"
+"0","#write.table()"

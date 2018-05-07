@@ -1,0 +1,38 @@
+"0","if(!require(dplyr)){"
+"0","  install.packages(""dplyr"")"
+"0","}"
+"2","Loading required package: dplyr
+"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","if(!require(ggplot2)){"
+"0","  install.packages(""ggplot2"")"
+"0","}"
+"2","Loading required package: ggplot2
+"
+"0","if(!require(SNPRelate)){ "
+"0","source(""https://bioconductor.org/biocLite.R"")"
+"0","  "
+"0","biocLite(""SNPRelate"")"
+"0","}"
+"2","Loading required package: SNPRelate
+"
+"2","Loading required package: gdsfmt
+"
+"2","SNPRelate -- supported by Streaming SIMD Extensions 2 (SSE2)
+"
+"0","library(dplyr)"
+"0","library(ggplot2)"
+"0","library(SNPRelate)"

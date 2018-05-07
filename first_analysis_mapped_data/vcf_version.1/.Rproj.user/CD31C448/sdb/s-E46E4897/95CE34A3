@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#Coursera 2 - Getting and Cleaning Data\n\npackageVersion(\"swirl\")\nlibrary(swirl)\ninstall_from_swirl(\"Getting and Cleaning Data\", dev = FALSE, mirror = \"github\")\ninstall_from_swirl(course_name, dev = FALSE, mirror = \"github\")\nswirl()\n\nPractice Programming Assignment: swirl Lesson 1: Manipulating Data with dplyr\n\nPractice Programming Assignment: swirl Lesson 2: Grouping and Chaining with dplyr\n\nPractice Programming Assignment: swirl Lesson 3: Tidying Data with tidyr",
+    "created" : 1525164638340.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2925983547",
+    "id" : "95CE34A3",
+    "lastKnownWriteTime" : 1525214156,
+    "last_content_update" : 1525214156497,
+    "path" : "~/Documents/4_Coursera/GettingAndCleaningData/swirl.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Googlesheets demo\n#' script is designed to be run in an 'interactive' session, not sourced\n\n#' load the libraries needed\n#' If they aren't installed, install them\nif(!require(here)){\n  install.packages(\"here\")\n}\nif(!require(usethis)){\n  install.packages('usethis')\n}\nif(!require(googlesheets)){\n  install.packages('googlesheets')\n}\nif(!require(kableExtra)){\n  install.packages(\"kableExtra\")\n}\nif(!require(dplyr)){\n  install.packages(\"dplyr\")\n}\nif(!require(ggplot2)){\n  install.packages(\"ggplot2\")\n}\n\n\n#' Need to setup the google authorisation file (needs to be done interactively)\n#' see https://github.com/jennybc/googlesheets/blob/master/vignettes/managing-auth-tokens.Rmd for extra details\nlibrary(googlesheets)\ntoken <- gs_auth(cache = FALSE)\ngd_token()\nsaveRDS(token, file = \"googlesheets_token.rds\")\n\n#' now make sure to add \"googlesheets_token.rds\" into your .gitignore\nusethis::edit_git_ignore(scope = 'project')\n",
+    "created" : 1520372702560.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2234171396",
+    "id" : "28BA5123",
+    "lastKnownWriteTime" : 1521144236,
+    "last_content_update" : 1521144236,
+    "path" : "~/Documents/1_OGFfiles/Workshop/StudyGroup/GoogleSheets/r_googlesheets_lesson/R/googlesheets_setup.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

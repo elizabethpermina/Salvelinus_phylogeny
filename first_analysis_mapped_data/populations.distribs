@@ -1,0 +1,91 @@
+# Note: Individual distributions can be extracted using the `stacks-dist-extract` utility.
+#       e.g. `stacks-dist-extract populations.distribs dist_name`
+
+BEGIN batch_progress
+Batch 1: analyzed 6 loci; filtered 10611 loci; 10617 loci seen.
+    Calculating F statistics...done.
+    Notice: Smoothing was requested (-k), but will not be performed as the loci are not ordered.
+END batch_progress
+
+BEGIN samples_per_loc_prefilters
+# Distribution of valid samples matched to a catalog locus prior to filtering.
+n_samples	n_loci
+0	10617
+END samples_per_loc_prefilters
+
+BEGIN confounded_samples_per_loc_prefilters
+
+# Distribution of confounded samples for each catalog locus prior to filtering.
+# Confounded samples at locus	Count
+0	10617
+END confounded_samples_per_loc_prefilters
+
+BEGIN missing_samples_per_loc_prefilters
+
+# Distribution of missing samples for each catalog locus prior to filtering.
+# Absent samples at locus	Count
+0	10617
+END missing_samples_per_loc_prefilters
+
+BEGIN snps_per_loc_prefilters
+# Distribution of the number of SNPs per catalog locus prior to filtering.
+n_snps	n_loci
+0	9816
+1	206
+2	102
+3	61
+4	78
+5	79
+6	37
+7	39
+8	52
+9	38
+10	25
+11	14
+12	16
+13	15
+14	6
+15	4
+16	6
+17	3
+18	4
+19	3
+20	2
+21	2
+22	1
+23	1
+25	2
+27	1
+28	1
+32	1
+36	1
+37	1
+END snps_per_loc_prefilters
+
+BEGIN samples_per_loc_postfilters
+# Distribution of valid samples matched to a catalog locus after filtering.
+n_samples	n_loci
+0	6
+END samples_per_loc_postfilters
+
+BEGIN confounded_samples_per_loc_postfilters
+
+# Distribution of confounded samples for each catalog locus after filtering.
+# Confounded samples at locus	Count
+0	6
+END confounded_samples_per_loc_postfilters
+
+BEGIN missing_samples_per_loc_postfilters
+
+# Distribution of missing samples for each catalog locus after filtering.
+# Absent samples at locus	Count
+0	6
+END missing_samples_per_loc_postfilters
+
+BEGIN snps_per_loc_postfilters
+# Distribution of the number of SNPs per catalog locus (after filtering).
+n_snps	n_loci
+3	3
+5	1
+6	2
+END snps_per_loc_postfilters

@@ -1,0 +1,2 @@
+"0","ggplot(aes(x = X, y = Y), data = tsne_data_genotype_non_zero) +"
+"0","  geom_point(aes(color = cluster))"

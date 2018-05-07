@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "if(!require(httr)) {\n  install.packages(\"httr\")\n}\nlibrary(httr)\n\nif(!require(openssl)) {\n  install.packages(\"openssl\")\n}\nlibrary(openssl)\n\nif(!require(sqldf)) {\n  install.packages(\"sqldf\")\n}\nlibrary(sqldf)\n\n\n# 1. Find OAuth settings for github:\n#    http://developer.github.com/v3/oauth/\noauth_endpoints(\"github\")\n\n# 2. To make your own application, register at \n#    https://github.com/settings/developers. Use any URL for the homepage URL\n#    (http://github.com is fine) and  http://localhost:1410 as the callback url\n#\n#    Replace your key and secret below.\nmyapp <- oauth_app(\"github\",\n                   key = \"f52e4bb37a8ff8997008\",\n                   secret = \"4e75d841a4dd05da00dd7c1c0301742bb1dcc889\")\n\n# 3. Get OAuth credentials\ngithub_token <- oauth2.0_token(oauth_endpoints(\"github\"), myapp)\n\n# 4. Use API\ngtoken <- config(token = github_token)\n#req <- GET(\"https://api.github.com/rate_limit\", gtoken)\nreq<-GET(\"https://api.github.com/users/jtleek/repos\", gtoken)\nstop_for_status(req)\ncontent(req)\n\n# OR:\nreq <- with_config(gtoken, GET(\"https://api.github.com/rate_limit\"))\nstop_for_status(req)\ncontent(req)",
+    "created" : 1525221209178.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "370442033",
+    "id" : "1AB4FDCD",
+    "lastKnownWriteTime" : 1525049460,
+    "last_content_update" : 1525049460,
+    "path" : "~/Documents/4_Coursera/GettingAndCleaningData/Quiz2httr.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
