@@ -1,6 +1,0 @@
-
-rawReadspathR2=home/artem/Osinov/reads/Split/
-SOMM238_TTTTTG_RA_GGAACAACCATGCAGG.fastq
-outputPath=
-for file1 in ${rawReadspathR2}SOMM238_*_RB_*.fastq; do 
-fastx_trimmer -i $file1 -f 6 -Q 33 -o ${rawReadspathR2}*.RB.fastq 2>&1; done
