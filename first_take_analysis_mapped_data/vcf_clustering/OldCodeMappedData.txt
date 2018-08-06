@@ -1,0 +1,54 @@
+---
+title: "Salvelinus_phylogeny"
+author: "EPermina"
+date: "23 April 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## file prepocessing and Stacks
+
+```{r broadway, engine='bash', eval=FALSE}
+wget http://catchenlab.life.illinois.edu/stacks/source/stacks-2.0Beta10a.tar.gz; tar -xzvf stacks-2.0Beta10a.tar.gz
+LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+cd stacks-2.0Beta10a/
+./configure --prefix=/home/Permina/stacks-2.0Beta10a
+make -j 8
+make install
+
+home/artem/Osinov/reads/Split/SOMM238_CGATTG_RB_GGGAGCTGAATGCAGG.fastq
+
+for fastq in data/raw_reads/*.fastq; 
+do cat $fastq | echo $((`wc -l`/4)) | sed 's/fastq.gz/-/g' | tr '-' '/t' >> file.sizes; done;
+
+tar -ztvf Osinov.tar.gz
+
+
+
+for sam in home/artem/Osinov/reads/align/*.fastq.sam;
+do
+samtools view -c -F 4
+
+tar -xvf Osinov.tar.gz home/artem/Osinov/reads/Split/
+tar -xvf Osinov.tar.gz home/artem/Osinov/reads/align/*.fastq.sam
+# change paths
+samples=/home/Permina/data/BarcodeSplitFastq/
+stacks_denovo=./home/Permina/stacks-2.0Beta7c/bin/denovo_map.pl
+popmap=/home/Permina/stacks-2.0Beta7c/bin/popmap1
+output=/home/Permina/scratch/
+/home/Permina/stacks-2.0Beta7c/bin/denovo_map.pl --samples $samples --popmap $popmap -o $output -m 6 -M 5 -n 5
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

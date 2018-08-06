@@ -1,0 +1,10 @@
+data/reference/*.gz
+code/*.pl
+*.Rproj.*
+*.Rhistory
+*.RData
+*.DS_Store
+code/SolexaQA++_v3.1.7.1.zip
+AnalysisOnUnMappedData/scratch/batch_1.catalog.tags.tsv
+AnalysisOnUnMappedData/scratch/batch_1.vcf
+

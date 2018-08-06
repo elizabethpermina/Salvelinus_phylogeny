@@ -1,0 +1,293 @@
+ssh Permina@broadway.autosome.ru
+
+git init
+
+
+
+#github  SevaVigg
+rm -rf .git
+git init
+git add *
+git commit -m "first commit - directory structure, fist round of analysis"
+git remote add origin git@github.com:elizabethpermina/Salvelinus_phylogeny.git
+Rab.IT@git.drupal.org:sandbox/Rab.IT/1231984.git
+git@github.com:
+git pull master origin
+git push -u origin master
+
+
+
+$HOME/.gitconfig
+
+
+##Push an existing repository from the command line
+
+git remote add origin git@github.com:alexpchin/<reponame>.git
+git push -u origin master
+
+
+To push to a private repository, you probably want to fork it, push your changes to your copy (which will stay private),
+and then create a pull request. When I tried to push directly to a private repository, I got the puzzling "remote: Repository not found. fatal"
+message, even though I could pull just fine.
+
+
+
+https://github.com/elizabethpermina/Salvelinus_phylogeny.git
+
+LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
+tar xzvf stacks-1.48.tar.gz
+cd stacks-1.48
+
+./configure --prefix=/home/epermina/soft/stacks-1.48
+make -j 8
+make install
+
+
+#samtools
+autoheader
+autoconf -Wno-syntax
+
+./configure --prefix=/home/epermina/soft/samtools
+make all all-htslib
+make install install-htslib
+
+#htslib
+./configure --prefix=/home/Permina/soft/samtools/htslib --with-htslib=/home/Permina/soft/samtools/htslib/
+
+--with-htslib=/home/Permina/soft/samtools/htslib/
+
+
+tar -ztvf Osinov.tar.gz
+tar -tvf my-data.tar.gz 'search-patter'
+
+tar -zxvf Osinov.tar.gz home/artem/Osinov/reads/MapReadsToMykija.pl
+tar -zxvf Osinov.tar.gz home/artem/Osinov/reads/CountReadsInGroupSamples.pl
+
+
+#!/bin/bash
+flowcell="SOMM238"
+for i in CGATTG CGGAAT GAGGTG TTTTTG; do
+    while read p; do
+        printf "cat ${flowcell}_${i}_RA_${p}.fastq ${flowcell}_${i}_RB_${p}.fastq > ${flowcell}_${i}_${p}.fastq  %s%s%s\n"
+    done < index.file >> merge.txt
+done
+exit 0
+
+num_reads = $((wc -l)/4)
+
+SOMM238_CGGAAT_RA_GGCAAGACTATGCAGG.fastq
+SOMM238_RA_TTTTTG_GGTGGTGGTATGCAGG.fastq
+
+for sam in data/processed_reads_mapped/*.sam; do 
+cat sam | awk '$2==0' && awk '$2==16' | wc -l
+
+
+data/processed_reads_mapped/number.of.forward.reads 
+
+samtools=/home/Permina/soft/samtools/samtools
+for sam in data/processed_reads_mapped/*.sam; do $samtools view $sam | 
+
+############################
+QC
+samtools=/home/Permina/soft/samtools/samtools
+
+for i in data/processed_reads_mapped/*sam
+
+
+
+
+
+
+./configure --prefix=/home/Permina/stacks-2.0Beta10a
+make -j 8
+make install
+A population genomic analysis: In this case you specify all your samples generically to denovo_map.pl or ref_map.pl (-s command line option). For sets of populations you can optionally supply a population map -- a file that specifies which samples belong to which populations (See below for more detail).
+If you donÕt supply this file, Stacks will assume all of the specified samples represent a single population.
+
+-M,--popmap Ñ path to a population map. (Format is 'SAMPLE1POP1\n...'.)
+
+process_radtags -p ./raw/ -o ./samples/ -b ./barcodes/barcodes_lane3 \
+                  -e sbfI -r -c -q
+
+ref_map.pl -T 8 -O ./samples/popmap \
+  -B westus_radtags -b 1 -D "western US population analysis" \
+  -o ./stacks/ \
+  -s ./samples/sample_2351.bam \
+  -s ./samples/sample_2352.bam \
+  -s ./samples/sample_2353.bam \
+  -s ./samples/sample_2354.bam \
+  -s ./samples/sample_2355.bam \
+  -s ./samples/sample_2356.bam \
+  -s ./samples/sample_2357.bam
+  
+  
+  ref_map.pl -T 8 -O ./popmap --samples ./samples \
+  -B westus_radtags -b 1 -D "western US population analysis" \
+  -o ./stacks
+  
+  samtools view filename.bam | awk '{OFS="\t"; print ">"$1"\n"$10}'
+  samtools fastq
+  
+popmap
+
+sample_03   red      high
+sample_04   red      high
+sample_05   yellow   high
+sample_08   yellow   high
+sample_09   blue     low
+sample_10   blue     low
+sample_11   blue     low
+sample_12   blue     low
+sample_13   orange   low
+
+% more popmap
+indv_01     fw
+indv_02     fw
+indv_03     fw
+indv_04     oc
+indv_05     oc
+indv_06     oc
+
+
+
+
+ref_map.pl -b 1 -n 3 -o ./stacks -O ./popmap_geographical \
+    -s ./samples/sample_01.bam \
+    -s ./samples/sample_02.bam \
+    -s ./samples/sample_03.bam \
+    ...
+    -s ./samples/sample_16.bam
+
+denovo_map.pl -T 8 -m 3 -M 3 -n 1 -t \
+  -B 2251_radtags -b 1 -D "family 2551-2571 radtag map" \
+  -o ./stacks/ \
+  -p ./samples/male.fastq \
+  -p ./samples/female.fastq \
+  -r ./samples/progeny_01.fastq \
+  -r ./samples/progeny_02.fastq \
+  -r ./samples/progeny_03.fastq \
+  -r ./samples/progeny_04.fastq \
+  -r ./samples/progeny_05.fastq
+
+samples=/home/epermina/data/BarcodeSplitFastq/
+stacks_denovo=./home/epermina/soft/stacks-2.0Beta7c/bin/denovo_map.pl
+popmap=/home/epermina/soft/stacks-2.0Beta7c/bin/popmap1
+output=/home/epermina/scratch/
+/home/epermina/soft/stacks-2.0Beta7c/bin/denovo_map.pl --samples $samples --popmap $popmap -o $output -m 6 -M 5 -n 5
+
+/home/epermina/soft/stacks-2.0Beta7c/bin/denovo_map.pl -o $output -s ${samples}P1_A01.bam.fastq -s ${samples}P1_C07.bam.fastq -s ${samples}P1_F01.bam.fastq -s ${samples}P1_H07.bam.fastq -s ${samples}P2_C01.bam.fastq -s ${samples}P2_E07.bam.fastq -m 6 -M 5 -n 5
+
+
+
+cat /home/epermina/data/BarcodeSplitFastq/P1_A01.bam.fastq |
+./Linux_x64/SolexaQA++ lengthsort /home/epermina/data/BarcodeSplitFastq/P1_A01.bam.fastq -l 150 -d /home/epermina/data/BarcodeSplitFastq/
+/home/epermina/soft/stacks-1.48/bin/ustacks -t fastq -f /home/epermina/data/BarcodeSplitFastq/P1_A01.bam.fastq.single -o /home/epermina/scratch -i 1
+
+for i in /home/epermina/data/BarcodeSplitFastq/*fastq
+do /home/epermina/soft/Linux_x64/SolexaQA++ lengthsort $i -l 150 -d /home/epermina/data/BarcodeSplitFastq/; done
+
+
+ref_map.pl -T 8 -O ./samples/popmap \
+  -B westus_radtags -b 1 -D "western US population analysis" \
+  -o ./stacks/ \
+  -s ./samples/sample_2351.bam \
+  -s ./samples/sample_2352.bam \
+  -s ./samples/sample_2353.bam \
+  -s ./samples/sample_2354.bam \
+  -s ./samples/sample_2355.bam \
+  -s ./samples/sample_2356.bam \
+  -s ./samples/sample_2357.bam
+  
+  
+  % ustacks -f ./samples/sample_39-1.fq.gz -o ./stacks -i 1 -M 6 --gapped -p 15
+% ustacks -f ./samples/sample_40-2.fq.gz -o ./stacks -i 2 -M 6 --gapped -p 15
+% ustacks -f ./samples/sample_41-1.fq.gz -o ./stacks -i 3 -M 6 --gapped -p 15
+
+
+
+check for denovo.pl exit code | result file presence
+cat nohup.out | grep -B3 "failed. (129)" | parse filepath - get the name of the file>> failed.list
+
+
+
+[epermina@broadway ~]$ cd /home/epermina/data/BarcodeSplitFastq/
+export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
+
+nohup bash ../../soft/stacks-2.0Beta7c/bin/run_denovo_1.sh > nohup.pop28.out
+
+
+
+# second run of denovo
+
+#!/bin/bash
+
+export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
+
+
+# barcode splitting by Artem
+
+/home/artem/Osinov/reads/SOMM238_R1_CGATTG.fastq
+/home/artem/Osinov/reads/SOMM238_R1_CGGAAT.fastq
+/home/artem/Osinov/reads/SOMM238_R1_GAGGTG.fastq
+/home/artem/Osinov/reads/SOMM238_R1_TTTTTG.fastq
+/home/artem/Osinov/reads/SOMM238_R3_CGATTG.fastq
+/home/artem/Osinov/reads/SOMM238_R3_CGGAAT.fastq
+/home/artem/Osinov/reads/SOMM238_R3_GAGGTG.fastq
+/home/artem/Osinov/reads/SOMM238_R3_TTTTTG.fastq
+
+ /home/artem/Osinov/reads/run_BestRadSplit.sh
+/home/artem/Osinov/reads/BarcodeSplitListBestRadPairedEnd.pl
+
+
+
+
+#
+# Make population-based corrections.
+samples=/home/epermina/data/BarcodeSplitFastq/
+stacks=/home/epermina/soft/stacks-2.0Beta7c/bin/
+popmap=/home/epermina/data/BarcodeSplitFastq/popmap3
+input=/home/epermina/scratch/
+output=/home/epermina/scratch/cor_stacks
+
+#
+${stacks}rxstacks -b 1 -P $input -o $output --conf_lim 0.25 --prune_haplo  --model_type bounded --bound_high 0.1 --lnl_lim -8.0 --lnl_dist -t 8 --verbose
+
+cstacks -b 1 -n 3 -p 36 -o $output -M $popmap
+
+b: database/batch ID for this catalog (default 1).
+n: number of mismatches allowed between sample loci when build the catalog (default 1).
+p: enable parallel execution with num_threads threads.
+
+
+${stacks}populations -t 36 -b 1 -P $src/stacks/ -M $src/popmap \
+            -p 9 -f p_value -k -r 0.75 -s --structure --phylip --genepop
+            
+${stacks}populations -t 36 -P /home/epermina/scratch -M /home/epermina/data/BarcodeSplitFastq/popmap3 -p 1 -f p_value -k -r 0.5 --phylip --vcf
+
+${stacks}populations -t 36 -P /home/epermina/scratch -M /home/epermina/data/BarcodeSplitFastq/popmap3 -p 1 -k -r 0.2 --phylip --vcf
+           
+populations -P dir [-O dir] [-M popmap] (filters) [--fstats] [-k [--sigma=150000] [--bootstrap [-N 100]]] (output formats)
+populations -V vcf -O dir [-M popmap] (filters) [--fstats] [-k [--sigma=150000] [--bootstrap [-N 100]]] (output formats)
+
+  -P,--in_path: path to a directory containing GStacks ouput files.
+  -V,--in_vcf: path to a standalone input VCF file.
+  -O,--out_path: path to a directory where to write the output files. (Required by -V; otherwise defaults to value of -P.)
+  -M,--popmap: path to a population map. (Format is 'SAMPLE1 \t POP1 \n SAMPLE2 ...'.)
+  -t,--threads: number of threads to run in parallel sections of code.
+  --batch_size [int]: the number of loci to process in a batch (default: 10,000 in de novo mode; in reference mode, one chromosome
+                      per batch). Increase to speed analysis, uses more memory, decrease to save memory).
+
+
+
+
+scp -r epermina@broadway.autosome.ru:/home/epermina/logs .
+scp -r epermina@broadway.autosome.ru:/home/epermina/code .
+
+scp -r epermina@broadway.autosome.ru:/home/epermina/results/first_run_on_mapped_data/ .
+
+
+
