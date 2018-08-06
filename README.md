@@ -6,7 +6,7 @@ a new vcf file has been created using unmapped data and a hands-on run of Stacks
  "successful run"  
 Currently the file is too lagre to push it to git, will be added after filtering for zeros (samples with no presence or poorly supported loci)
 
-Full list of AnalysisOnUnMappedData/scratch (large files are in *bold*: 
+Full list of AnalysisOnUnMappedData/scratch (large files are in *italic*: 
 
 Readme.notes.txt
 
