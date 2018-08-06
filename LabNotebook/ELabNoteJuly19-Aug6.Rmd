@@ -1,0 +1,358 @@
+---
+title: " Lab Notebook 19 July - 6 Aug"
+output: html_notebook
+author: "Elizabeth Permina"
+---
+
+## Second analysis, successful run:
+
+```{r}
+#!/bin/bash
+files="P1_A01 P1_A02 P1_A03 P1_A04 P1_A05 P1_A06 P1_A07 P1_A08 P1_A09 P1_A10 P1_A11 P1_A12 P1_B01 P1_B02 P1_B03 P1_B04 P1_B05 P1_B06 P1_B07 P1_B08 P1_B09 P1_B10 P1_B11 P1_B12 P1_C01 P1_C02 P1_C03 P1_C04 P1_C05 P1_C06 P1_C07 P1_C08 P1_C09 P1_C10 P1_C11 P1_C12 P1_D01 P1_D02 P1_D03 P1_D04 P1_D05 P1_D06 P1_D07 P1_D08 P1_D09 P1_D10 P1_D11 P1_D12 P1_E01 P1_E02 P1_E03 P1_E04 P1_E05 P1_E06 P1_E07 P1_E08 P1_E09 P1_E10 P1_E11 P1_E12 P1_F01 P1_F02 P1_F03 P1_F04 P1_F05 P1_F06 P1_F07 P1_F08 P1_F09 P1_F10 P1_F11 P1_F12 P1_G01 P1_G02 P1_G03 P1_G04 P1_G05 P1_G06 P1_G07 P1_G08 P1_G09 P1_G10 P1_G11 P1_G12 P1_H01 P1_H02 P1_H03 P1_H04 P1_H05 P1_H06 P1_H07 P1_H08 P1_H09 P1_H10 P1_H11 P1_H12 P2_A01 P2_A02 P2_A03 P2_A04 P2_A05 P2_A06 P2_A07 P2_A08 P2_A09 P2_A10 P2_A11 P2_A12 P2_B01 P2_B02 P2_B03 P2_B04 P2_B05 P2_B06 P2_B07 P2_B08 P2_B09 P2_B10 P2_B11 P2_B12 P2_C01 P2_C02 P2_C03 P2_C04 P2_C05 P2_C06 P2_C07 P2_C08 P2_C09 P2_C10 P2_C11 P2_C12 P2_D01 P2_D02 P2_D03 P2_D04 P2_D05 P2_D06 P2_D07 P2_D08 P2_D09 P2_D10 P2_D11 P2_D12 P2_E01 P2_E02 P2_E03 P2_E04 P2_E05 P2_E06 P2_E07 P2_E08 P2_E09 P2_E10 P2_E11 P2_E12 P2_F01 P2_F02 P2_F03 P2_F04 P2_F05 P2_F06 P2_F07 P2_F08 P2_F09 P2_F10 P2_F11 P2_F12 P2_G01 P2_G02 P2_G03 P2_G04 P2_G05 P2_G06 P2_G07 P2_G08 P2_G09 P2_G10 P2_G11 P2_G12 P2_H01 P2_H02 P2_H03 P2_H04 P2_H05 P2_H06 P2_H07 P2_H08 P2_H09 P2_H10 P2_H11 P2_H12 P3_A01 P3_A02 P3_A03 P3_A04 P3_A05 P3_A06 P3_A07 P3_A08 P3_A09 P3_A10 P3_A11 P3_A12 P3_B01 P3_B02 P3_B03 P3_B04 P3_B05 P3_B06 P3_B07 P3_B08 P3_B09 P3_B10 P3_B11 P3_B12 P3_C01 P3_C02 P3_C03 P3_C04 P3_C05 P3_C06 P3_C07 P3_C08 P3_C09 P3_C10 P3_C11 P3_C12 P3_D01 P3_D02 P3_D03 P3_D04 P3_D05 P3_D06 P3_D07 P3_D08 P3_D09 P3_D10 P3_D11 P3_D12 P3_E01 P3_E02 P3_E03 P3_E04 P3_E05 P3_E06 P3_E07 P3_E08 P3_E09 P3_E10 P3_E11 P3_E12 P3_F01 P3_F02 P3_F03 P3_F04 P3_F05 P3_F06 P3_F07 P3_F08 P3_F09 P3_F10 P3_F11 P3_F12 P3_G01 P3_G02 P3_G03 P3_G04 P3_G05 P3_G06 P3_G07 P3_G08 P3_G09 P3_G10 P3_G11 P3_G12 P3_H01 P3_H02 P3_H03 P3_H04 P3_H05 P3_H06 P3_H07 P3_H08 P3_H09 P3_H10 P3_H11 P3_H12 P4_A01 P4_A02 P4_A03 P4_A04 P4_A05 P4_A06 P4_A07 P4_A08 P4_A09 P4_A10 P4_A11 P4_A12 P4_B01 P4_B02 P4_B03 P4_B04 P4_B05 P4_B06 P4_B07 P4_B08 P4_B09 P4_B10 P4_B11 P4_B12 P4_C01 P4_C02 P4_C03 P4_C04 P4_C05 P4_C06 P4_C07 P4_C08 P4_C09 P4_C10 P4_C11 P4_C12 P4_D01 P4_D02 P4_D03 P4_D04 P4_D05 P4_D06 P4_D07 P4_D08 P4_D09 P4_D10 P4_D11 P4_D12 P4_E01 P4_E02 P4_E03 P4_E04 P4_E05 P4_E06 P4_E07 P4_E08 P4_E09 P4_E10 P4_E11 P4_E12 P4_F01 P4_F02 P4_F03 P4_F04 P4_F05 P4_F06 P4_F07 P4_F08 P4_F09 P4_F10 P4_F11 P4_F12 P4_G01 P4_G02 P4_G03 P4_G04 P4_G05 P4_G06 P4_G07 P4_G08 P4_G09 P4_G10 P4_G11 P4_G12 P4_H01 P4_H02 P4_H03 P4_H04 P4_H05 P4_H06 P4_H07 P4_H08 P4_H09 P4_H10 P4_H11 P4_H12"
+stacks=/home/Permina/soft/stacks-1.48/
+popmap=/home/Permina/scratch/popmap3
+stacksoutput=/home/Permina/data/raw_renamed/
+R1path=/home/Permina/data/raw_renamed/
+R2path=/home/Permina/data/processed_reads_trimmed/R2/
+output=/home/Permina/data/raw_renamed/
+
+# /home/Permina/scratch/output_run4 is for the previous Stacks version run 
+# /home/Permina/scratch/output_run3 is for stacks=/home/Permina/stacks-2.0Beta10a/bin/
+# Build loci de novo in each sample for the single-end reads only. If paired-end reads are available, 
+# they will be integrated in a later stage (tsv2bam stage).
+# This loop will run ustacks on each sample, e.g.
+#   ustacks -f ./samples/sample_01.1.fq.gz -o ./stacks -i 1 --name sample_01 -M 4 --gapped -p 8
+# P1_A01_1.fastq
+id=1
+for sample in $files
+do
+    ${stacks}ustacks -f ${R1path}${sample}_1.fastq -o $stacksoutput -i $id -M 4 --gapped -p 8
+    let "id+=1"
+done
+
+sendmail epermina@gmail.com
+# Make population-based corrections.
+${stacks}rxstacks -b 1 -P $stacksoutput -o $stacksoutput --conf_lim 0.25 --prune_haplo  --model_type bounded --bound_high 0.1 --lnl_lim -8.0 --lnl_dist -t 8 --verbose
+
+# Build the catalog of loci available in the metapopulation from the samples contained
+# in the population map. To build the catalog from a subset of individuals, supply
+# a separate population map only containing those samples.
+#
+${stacks}cstacks -n 6 -P $stacksoutput -M $popmap --gapped -p 8
+
+#
+# Run sstacks. Match all samples supplied in the population map against the catalog.
+#
+${stacks}sstacks -P $stacksoutput -M $popmap --gapped -p 8
+
+
+#
+# Run populations. Calculate Hardy-Weinberg deviation, population statistics, f-statistics
+# export several output files.
+#
+${stacks}populations -t 36 -P $stacksoutput -M $popmap -p 1 -k -r 0.2 --phylip --vcf
+#${stacks}populations -P $stacksoutput -M $popmap -r 0.65 --vcf --genepop --structure --fstats --hwe -t 8
+
+
+
+```
+
+nohup bash run.stacks1.14.sh > nohuprun.stacks1.14.out 2>&1&
+from root:
+nohup bash code/run.stacks1.14.sh 
+
+```{r}
+ls /home/Permina/data/raw_renamed/P1_A01.1.fastq
+ls /home/Permina/data/raw_renamed/
+```
+
+### on elizabethpermina:
+
+New files from the last run (raw, renamed, read 1 data) are in
+```{bash}
+path=/Users/elizabethpermina/Documents/3_RADseq/Salvelinus_phylogeny/second_analysis/scratch/*
+fileNamePattern=batch_1*
+
+```
+
+VCF manipulation
+```{bash}
+wc -l data/raw_renamed/batch_1.vcf
+# 438094 data/raw_renamed/batch_1.vcf - total number of lines in the file
+```
+
+```{r}
+# VCF header = number of lines
+# column names are
+# symbol substitution
+# possible genotype denotation examples are : ./.:0:.,. 1/1:4:0,4 0/0:4:4,0 ./.:19:.,.
+# formal cutoff is at 3 reads, increase to at least 20
+```
+
+To do:
+* format vcf (substitute backslashes, filter for supporting number of reads)
+result 1: batch_1 vcf file with 0, 0.5 and 1 for genotype
+result 2: batch_1 vcf file with combined number of reads or comma-separated number of reads for REF and ALT
+result 3: list of samble names that are 0-only
+result 4: list of sample names with sum of all reads in all loci?
+* filter for samples for non-presence (delete ./.-only columns)
+* sort loci by chromosome
+
+Old workway:
+
+### Data manipulation, reading in
+
+first_analysis/populations.snps.vcf.filtered.for.non-presence.presumed.0.samplesOnly.txt is a modified populations.snps.vcf file
+
+1. all samples with no coverage of SNPs (./. only columns) were removed
+1. vcf header has also been removed
+1. ./. is replaced with 0/0:0:0,0
+
+Finding relevant files on the users computer and reading these in
+files:
+populations.snps.vcf.Z.txt
+populations.snps.vcf.Z.headless.sampleNames.trimmed.txt
+populations.snps.vcf.split.info.genotype.coverage.txt
+
+```{r, engine='bash', eval = FALSE}
+cat populations.snps.vcf.Z.txt | sed 's/.single//g' | tail -n +15 | cut -f10- > populations.snps.vcf.Z.headless.sampleNames.trimmed.txt
+```
+
+
+```{r, engine='bash', eval = FALSE}
+
+cat genotype.txt | sed 's#0/1#0.5#g' | sed 's#0/0#0#g' | sed 's#1/1#1#g' > genotype.01.txt
+```
+
+
+```{r, eval=FALSE}
+# read in bash-splitted file
+genotype_split<-read.delim("../populations.snps.vcf.split.info.genotype.coverage.txt", header = F, sep = '\t')
+genotype_raw<-read.delim("../populations.snps.vcf.Z.headless.sampleNames.trimmed.txt", sep = "\t", header = TRUE) 
+
+genotype_names_in_split <- paste(names, ".1.geno", sep="") # genotype names in split
+coverage_names_in_split <- paste(names, ".2.cover", sep="") # coverage names in split
+pro<- paste(names, ".3.pro", sep="") # coverage names in split
+
+#bind 3 vectors
+ z <- as.vector(rbind(genotype_names_in_split,coverage_names_in_split,pro)) 
+names(genotype_split)<-z
+
+```
+
+
+Clustering - coverage and genotype
+```{r}
+genotype_split<-read.delim("genotype_split_object.tab")
+coverage_cols<-grepl("2.cover", names(genotype_split))
+genotype_cols<-grepl("1.geno", names(genotype_split))
+coverage<-genotype_split[coverage_cols]
+#get the names of the samples with > 0 presence
+
+non_zero_coverage <- coverage[,colSums(coverage) > 0]
+non_zero_names<-names(non_zero_coverage)
+
+
+
+fileConn<-file("non_zero_names")
+writeLines(non_zero_names, fileConn)
+close(fileConn)
+
+non_zero_names_parsed<-scan(file="non_zero_names.txt", what="character")
+
+genotype<- read.delim("genotype.01.txt", sep = "\t", header = TRUE)
+fileConn<-file("genotype_names")
+writeLines(names(genotype), fileConn)
+close(fileConn)
+
+genotype_names_parsed<-scan(file="genotype_names.txt", what="character")
+genotype_non_zero<-genotype[non_zero_names_parsed]
+
+t.coverage<-t(as.matrix(coverage))
+t.genotype<-t(as.matrix(genotype))
+t.genotype_non_zero<-t(as.matrix(genotype_non_zero))
+
+ # df3 = merge(t.coverage, t.genotype, by.x=row.names(t.coverage), by.y=row.names(t.genotype))
+
+# Applying Ward Hierarchical Clustering
+d_coverage   <- dist(t.coverage, method="euclidean")
+ward_fit_coverage <- hclust(d_coverage, method="ward")
+g4_ward_coverage <- cutree(ward_fit_coverage, k = c(4))
+g8_ward_coverage <- cutree(ward_fit_coverage, k = c(8))
+
+#using Gower via daisy
+gower_dist_genotype <- daisy(t.genotype,
+                    metric = "gower",
+                    type = list(logratio = 3))
+gower_mat_genotype <- as.matrix(gower_dist_genotype)
+
+fit_genotype<-hclust(gower_dist_genotype, method = "median")
+
+tsne_obj_genotype <- Rtsne(gower_dist_genotype, perplexity=15, is_distance = TRUE)
+pam_fit_genotype <- pam(gower_dist_genotype, diss = TRUE, k = 3)
+tsne_data_genotype <- tsne_obj_genotype$Y %>%
+  data.frame() %>%
+  setNames(c("X", "Y")) %>%
+  mutate(cluster = factor(pam_fit_genotype$clustering),
+         name = row.names(t.genotype))
+
+
+gower_dist_genotype_non_zero<-daisy(t.genotype_non_zero, metric = "gower", 
+                                    type = list(logratio = 3))
+gower_mat_genotype_non_zero<-as.matrix(gower_dist_genotype_non_zero)
+fit_genotype_non_zero<-hclust(gower_dist_genotype_non_zero)
+
+tsne_obj_genotype_non_zero <- Rtsne(gower_dist_genotype_non_zero, perplexity=15, is_distance = TRUE)
+pam_fit_genotype_non_zero <- pam(gower_dist_genotype_non_zero, diss = TRUE, k = 3)
+tsne_data_genotype_non_zero <- tsne_obj_genotype_non_zero$Y %>%
+  data.frame() %>%
+  setNames(c("X", "Y")) %>%
+  mutate(cluster = factor(pam_fit_genotype_non_zero$clustering),
+         name = row.names(t.genotype_non_zero))
+
+
+
+# Gower clusters for coverage:
+
+gower_dist_coverage <- daisy(t.coverage,
+                    metric = "gower",
+                    type = list(logratio = 3))
+gower_mat_coverage <- as.matrix(gower_dist_coverage)
+
+
+tsne_obj_coverage <- Rtsne(gower_dist_coverage, perplexity=15, is_distance = TRUE)
+pam_fit_coverage <- pam(gower_dist_coverage, diss = TRUE, k = 3)
+tsne_data_coverage <- tsne_obj_coverage$Y %>%
+  data.frame() %>%
+  setNames(c("X", "Y")) %>%
+  mutate(cluster = factor(pam_fit_coverage$clustering),
+         name = row.names(t.coverage))
+
+```
+
+Writing data out 
+
+```{r}
+write.table(tsne_data_genotype, file="genotype_clusters.csv", quote = FALSE, sep = ",")
+write.table(g8_ward_coverage, file="coverage_groups.csv", quote = FALSE, sep = ",")
+write.table(tsne_data_coverage, file = "coverage_clusters.csv", quote = FALSE, sep = ",")
+
+```
+
+Plots:
+Ward clustered dendrogram for coverage:
+```{r ward for coverage}
+
+par(cex=0.4, mar=c(5, 8, 4, 1))
+plot(ward_fit_coverage, xlab="coverage", ylab="", main="", sub="", axes=FALSE)
+par(cex=1)
+title(xlab="samples", ylab="Ward's D", main="coverage")
+axis(2)
+
+```
+
+Genotype clusters:
+```{r genotype clusters}
+ggplot(aes(x = X, y = Y), data = tsne_data_genotype) +
+  geom_point(aes(color = cluster))
+```
+
+```{r}
+ggplot(aes(x = X, y = Y), data = tsne_data_genotype_non_zero) +
+  geom_point(aes(color = cluster))
+#shows we should try 5 groups instead
+```
+
+
+Dendrogram for genotypes:
+```{r dendrogram for genotypes}
+fit_genotype<-hclust(gower_dist_genotype, method = "ward.D")
+par(cex=0.4, mar=c(5, 8, 4, 1))
+plot(fit_genotype, xlab="genotype", ylab="", main="", sub="", axes=FALSE)
+par(cex=1)
+title(xlab="samples", ylab="ward", main="genotype")
+axis(2)
+
+```
+
+
+```{r}
+fit_genotype<-hclust(gower_dist_genotype_non_zero, method = "ward.D")
+par(cex=0.4, mar=c(5, 8, 4, 1))
+plot(fit_genotype_non_zero, xlab="", ylab="", main="", sub="", axes=FALSE)
+par(cex=1)
+title(xlab="samples", ylab="ward", main="genotype - non-zero coverage")
+axis(2)
+```
+
+
+Samples in genotype clusters:
+
+```{r}
+tsne_data_genotype
+```
+
+Coverage clusters:
+
+```{r coverage clusters - plot}
+ggplot(aes(x = X, y = Y), data = tsne_data_coverage) +
+  geom_point(aes(color = cluster))
+```
+
+Samples and coverage clusters:
+
+```{r coverage in samples table}
+tsne_data_coverage
+```
+
+Clustering SNPs
+```{r SNP clusters}
+
+m.coverage<-as.matrix(coverage)
+m.genotype<-as.matrix(genotype)
+
+
+ # df3 = merge(t.coverage, t.genotype, by.x=row.names(t.coverage), by.y=row.names(t.genotype))
+
+# Applying Ward Hierarchical Clustering
+d_coverage_snp   <- dist(m.coverage, method="euclidean")
+ward_fit_coverage_snp <- hclust(d_coverage_snp, method="ward")
+g4_ward_coverage_snp <- cutree(ward_fit_coverage_snp, k = c(4))
+g8_ward_coverage_snp <- cutree(ward_fit_coverage_snp, k = c(8))
+
+#using Gower via daisy
+gower_dist_genotype_snp <- daisy(m.genotype,
+                    metric = "gower",
+                    type = list(logratio = 3))
+gower_mat_genotype <- as.matrix(gower_dist_genotype)
+
+fit_genotype<-hclust(gower_dist_genotype, method = "median")
+
+tsne_obj_genotype <- Rtsne(gower_dist_genotype, is_distance = TRUE)
+pam_fit_genotype <- pam(gower_dist_genotype, diss = TRUE, k = 3)
+tsne_data_genotype <- tsne_obj_genotype$Y %>%
+  data.frame() %>%
+  setNames(c("X", "Y")) %>%
+  mutate(cluster = factor(pam_fit_genotype$clustering),
+         name = row.names(t.genotype))
+
+
+# Gower clusters for coverage:
+
+gower_dist_coverage <- daisy(t.coverage,
+                    metric = "gower",
+                    type = list(logratio = 3))
+gower_mat_coverage <- as.matrix(gower_dist_coverage)
+
+
+tsne_obj_coverage <- Rtsne(gower_dist_coverage, is_distance = TRUE)
+pam_fit_coverage <- pam(gower_dist_coverage, diss = TRUE, k = 3)
+tsne_data_coverage <- tsne_obj_coverage$Y %>%
+  data.frame() %>%
+  setNames(c("X", "Y")) %>%
+  mutate(cluster = factor(pam_fit_coverage$clustering),
+         name = row.names(t.coverage))
+
+```
+
+
